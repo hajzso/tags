@@ -31,6 +31,24 @@ def _is(path, body='', context={}):
 
 # ---- Add your custom tags here! -----
 
+@lang.add_tag
+def link(title, url, date, tags, body=u'', context={}):
+    '''Link post type tag'''
+    # By tag we mean category below
+    tags_list = tags.split()
+    tags_formatted = u''
+    for tag in tags_list:
+        template = u'<a class="tag">' + tag + u' </a>'
+        tags_formatted += template
+
+    result =  u'''<div class="link">
+                     <a target="blank" class="title" href="%(url)s">%(title)s'</a>
+                     </br><span class="date">%(date)s</span>
+                     <p class="description">%(body)s</p>
+                     %(tags)s
+                  </div>''' % {'title': title, 'url': url, 'date': date, 'body': body, 'tags': tags_formatted}
+    return result
+
 # Example:
 
 # @lang.add_tag
