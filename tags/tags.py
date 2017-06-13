@@ -42,7 +42,7 @@ def link(title, url, date, tags, body=u'', context={}):
         tags_formatted += template
 
     result =  u'''<div class="link">
-                     <a target="blank" class="title" href="%(url)s">%(title)s'</a>
+                     <a target="blank" class="title" href="%(url)s">%(title)s</a>
                      </br><span class="date">%(date)s</span>
                      <p class="description">%(body)s</p>
                      %(tags)s
