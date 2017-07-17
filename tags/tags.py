@@ -44,8 +44,8 @@ def link(title, url, date, tags, body=u'', context={}):
     result =  u'''<div class="link">
                      <a target="blank" class="title" href="%(url)s">%(title)s</a>
                      </br><span class="date">%(date)s</span>
-                     <p class="description">%(body)s</p>
                      %(tags)s
+                     <p class="description">%(body)s</p>
                   </div>''' % {'title': title, 'url': url, 'date': date, 'body': body, 'tags': tags_formatted}
     return result
 
